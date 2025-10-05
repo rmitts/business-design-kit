@@ -6,11 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  // Configure base path for GitHub Pages (will be repository name)
-  basePath: process.env.NODE_ENV === 'production' ? '/business-design-kit' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/business-design-kit' : '',
-  // Disable telemetry for CI
-  ...(process.env.CI && { telemetry: { disabled: true } })
+  basePath: '/business-design-kit',
+  assetPrefix: '/business-design-kit'
 };
 
 export default nextConfig;
