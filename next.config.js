@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: 'export',
   trailingSlash: true,
   images: {
@@ -10,4 +9,4 @@ const nextConfig: NextConfig = {
   assetPrefix: '/business-design-kit'
 };
 
-export default nextConfig;
+module.exports = nextConfig;

@@ -41,28 +41,8 @@ jobs:
         env:
           NODE_ENV: production
       
-      - name: Check build output
-        run: |
-          echo "Checking build output..."
-          ls -la
-          if [ -d "./out" ]; then
-            echo "✓ out directory exists"
-            ls -la out/
-          else
-            echo "✗ out directory does not exist, checking .next..."
-            ls -la .next/ || echo "No .next directory"
-            echo "Checking if build completed..."
-          fi
-      
       - name: Add .nojekyll file
-        run: |
-          if [ -d "./out" ]; then
-            touch ./out/.nojekyll
-            echo "✓ .nojekyll file created"
-          else
-            echo "Error: out directory does not exist"
-            exit 1
-          fi
+        run: touch ./out/.nojekyll
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
